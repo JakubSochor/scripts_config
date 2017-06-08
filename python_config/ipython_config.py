@@ -32,7 +32,6 @@
 c.InteractiveShellApp.exec_lines = ["%autoreload 2"]
 c.InteractiveShellApp.exec_lines.append("import numpy as np")
 c.InteractiveShellApp.exec_lines.append("import matplotlib.pyplot as plt")
-c.InteractiveShellApp.exec_lines.append("%config InlineBackend.figure_format = 'retina'")
 c.InteractiveShellApp.exec_lines.append("%aimport -numpy")
 c.InteractiveShellApp.exec_lines.append("%aimport -keras")
 c.InteractiveShellApp.exec_lines.append("%aimport -tensorflow")
@@ -42,6 +41,7 @@ c.InteractiveShellApp.exec_lines.append("%aimport -cv2")
 c.InteractiveShellApp.exec_lines.append("%aimport -matplotlib")
 c.InteractiveShellApp.exec_lines.append('print("Warning: disable autoreload in ipython_config.py to improve performance.")')
 
+c.InlineBackend.figure_formats = {'svg', 'retina'}
 
 ## A list of dotted module names of IPython extensions to load.
 c.InteractiveShellApp.extensions = ["autoreload"]
@@ -58,7 +58,7 @@ c.InteractiveShellApp.extensions = ["autoreload"]
 
 ## Should variables loaded at startup (by startup files, exec_lines, etc.) be
 #  hidden from tools like %who?
-#c.InteractiveShellApp.hide_initial_ns = True
+c.InteractiveShellApp.hide_initial_ns = False
 
 ## Configure matplotlib for interactive use with the default matplotlib backend.
 #c.InteractiveShellApp.matplotlib = None
