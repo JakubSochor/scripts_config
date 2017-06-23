@@ -1,5 +1,5 @@
 # Configuration file for ipython.
-
+import platform
 #------------------------------------------------------------------------------
 # InteractiveShellApp(Configurable) configuration
 #------------------------------------------------------------------------------
@@ -41,7 +41,10 @@ c.InteractiveShellApp.exec_lines.append("%aimport -cv2")
 c.InteractiveShellApp.exec_lines.append("%aimport -matplotlib")
 c.InteractiveShellApp.exec_lines.append('print("Warning: disable autoreload in ipython_config.py to improve performance.")')
 
-c.InlineBackend.figure_formats = {'svg', 'retina'}
+if platform.node() == "pcsochor":
+	c.InlineBackend.figure_formats = {'png'}
+else:
+	c.InlineBackend.figure_formats = {'svg', 'retina'}
 
 ## A list of dotted module names of IPython extensions to load.
 c.InteractiveShellApp.extensions = ["autoreload"]

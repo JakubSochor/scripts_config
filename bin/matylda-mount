@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sshfs  isochor@matylda1:/mnt/data/ /mnt/matylda1/

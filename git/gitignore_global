@@ -1,0 +1,14 @@
+*.mex*
+*.pyc
+.idea
+*.aux
+*.out
+*.log
+*.synctex.gz
+*.bbl
+*.blg
+_session.tks
+*.txss
+*.brf
+.spyder*
+.spyproject

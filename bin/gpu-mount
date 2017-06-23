@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sshfs  isochor@pcsochor-gpu:/home/isochor /mnt/gpu
