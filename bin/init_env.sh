@@ -44,7 +44,7 @@ else
 	alias qlog-res='qlogin -q long.q@@stable -l ram_free=150000M,mem_free=150000M,matylda1=1'
 	alias qlog-gpu='qlogin -q long.q@@gpu -l gpu=1,matylda1=10,mem_free=5G,ram_free=5G'
 	alias matlab='LD_PRELOAD="/usr/lib64/libstdc++.so.6" matlab'
-	export CUDAHOME="/usr/local/cuda"
+	export CUDAHOME="/usr/local/share/cuda"
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 5)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"	
 fi
 
