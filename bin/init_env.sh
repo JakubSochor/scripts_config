@@ -72,7 +72,7 @@ fi
 
 if [[ ! -z "$CUDAHOME" ]]; then
 	echo "Adding CUDA from $CUDAHOME"
-	if [[ -d "$CUDAHOME/bin"]]; then
+	if [[ -d "$CUDAHOME/bin" ]]; then
 		export PATH="$CUDAHOME/bin:$PATH"
 	fi
 	if [[ -d "$CUDAHOME/lib64" ]]; then
