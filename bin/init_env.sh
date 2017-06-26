@@ -23,11 +23,11 @@ export EDITOR=vim
 alias ll='ls -lh'
 
 hostname=`hostname`
-
 if [[ "$hostname" == "pcsochor" ]]; then
 	echo "PCsochor specific variables"
 	export PREFIX="/home/isochor/local"
 	export MATLABROOT=""
+	export CUDAHOME=""
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
 elif [[ "$hostname" == "pcsochorgpu" ]]; then
 	echo "PCsochor-GPU specific variables"
@@ -35,6 +35,7 @@ elif [[ "$hostname" == "pcsochorgpu" ]]; then
 	export MATLABROOT="/usr/local/MATLAB/R2015b"
 	alias matlab='LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libstdc++.so.6" matlab'
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 1)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
+	export CUDAHOME="/usr/local/cuda"
 else
 	echo "SGE specific variables"
 	PREXIX="/mnt/matylda1/isochor/local"
@@ -43,7 +44,8 @@ else
 	alias qlog-res='qlogin -q long.q@@stable -l ram_free=150000M,mem_free=150000M,matylda1=1'
 	alias qlog-gpu='qlogin -q long.q@@gpu -l gpu=1,matylda1=10,mem_free=5G,ram_free=5G'
 	alias matlab='LD_PRELOAD="/usr/lib64/libstdc++.so.6" matlab'
-	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 5)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
+	export CUDAHOME="/usr/local/cuda"
+	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 5)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"	
 fi
 
 
@@ -66,6 +68,16 @@ fi
 if [[ ! -z "$MATLABROOT" ]]; then
 	echo "Adding $MATLABROOT to path"
 	export PATH="$MATLABROOT/bin:$PATH"
+fi
+
+if [[ ! -z "$CUDAHOME" ]]; then
+	echo "Adding CUDA from $CUDAHOME"
+	if [[ -d "$CUDAHOME/bin"]]; then
+		export PATH="$CUDAHOME/bin:$PATH"
+	fi
+	if [[ -d "$CUDAHOME/lib64" ]]; then
+		export LD_LIBRARY_PATH="$CUDAHOME/lib64:$LD_LIBRARY_PATH"
+	fi
 fi
 
 
