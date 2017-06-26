@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo -n "SGE Running: "
+qstat -u isochor | grep "  r  " | wc -l
+echo -n "SGE Waiting: "
+qstat -s p -g d -g t | grep isochor | wc -l
