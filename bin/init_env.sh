@@ -38,7 +38,7 @@ elif [[ "$hostname" == "pcsochorgpu" ]]; then
 	export CUDAHOME="/usr/local/cuda"
 else
 	echo "SGE specific variables"
-	PREXIX="/mnt/matylda1/isochor/local"
+	export PREXIX="/mnt/matylda1/isochor/local"
 	alias qmy-all='qstat -u isochor'
 	alias qlog='qlogin -q long.q@@stable -l ram_free=15000M,mem_free=15000M,matylda1=1'
 	alias qlog-res='qlogin -q long.q@@stable -l ram_free=150000M,mem_free=150000M,matylda1=1'
