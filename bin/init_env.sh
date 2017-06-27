@@ -13,14 +13,11 @@ else
 	export LD_LIBRARY_PATH=$_ORIGINAL_LD_LIBRARY_PATH
 fi
 
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENV_PYTHON=/usr/bin/python3
-if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
-	source /usr/local/bin/virtualenvwrapper.sh
-fi
+
 
 export EDITOR=vim
 alias ll='ls -lh'
+
 
 hostname=`hostname`
 if [[ "$hostname" == "pcsochor" ]]; then
@@ -28,6 +25,7 @@ if [[ "$hostname" == "pcsochor" ]]; then
 	export PREFIX="/home/isochor/local"
 	export MATLABROOT=""
 	export CUDAHOME=""
+	export PYTHON_BIN=/usr/bin/python3
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
 elif [[ "$hostname" == "pcsochorgpu" ]]; then
 	echo "PCsochor-GPU specific variables"
@@ -36,6 +34,7 @@ elif [[ "$hostname" == "pcsochorgpu" ]]; then
 	alias matlab='LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libstdc++.so.6" matlab'
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 1)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
 	export CUDAHOME="/usr/local/cuda"
+	export PYTHON_BIN=/usr/bin/python3
 else
 	echo "SGE specific variables"
 	export PREXIX="/mnt/matylda1/isochor/local"
@@ -46,9 +45,17 @@ else
 	alias matlab='LD_PRELOAD="/usr/lib64/libstdc++.so.6" matlab'
 	export PYTHONHOME="$PREFIX/anaconda3"
 	export PATH="$PYTHONHOME/bin:$PATH"
+	export PYTHON_BIN="$PYTHONHOME/bin/python3"
 	echo "Enabling python from $PYTHONHOME"
 	export CUDAHOME="/usr/local/share/cuda"
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 5)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"	
+fi
+
+
+export VIRTUALENVWRAPPER_PYTHON=$PYTHON_BIN
+export VIRTUALENV_PYTHON=$PYTHON_BIN
+if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+	source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 
