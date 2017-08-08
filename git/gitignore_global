@@ -12,3 +12,4 @@ _session.tks
 *.brf
 .spyder*
 .spyproject
+.vscode
