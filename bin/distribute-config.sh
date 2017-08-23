@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for remote in "pcsochor-gpu" "merlin"
+for remote in "merlin"
 do
 	echo "------ $remote -------"
 	ssh isochor@$remote 'cd ~/scripts_config && git pull'

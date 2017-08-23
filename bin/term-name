@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Setting terminal name to: $1"
+export PROMPT_COMMAND="echo -en '\033]0;$1\a'"

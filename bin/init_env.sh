@@ -27,14 +27,6 @@ if [[ "$hostname" == "pcsochor" ]]; then
 	export CUDAHOME=""
 	export PYTHON_BIN=/usr/bin/python3
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
-elif [[ "$hostname" == "pcsochorgpu" ]]; then
-	echo "PCsochor-GPU specific variables"
-	export PREFIX="/home/isochor/local"
-	export MATLABROOT="/usr/local/MATLAB/R2015b"
-	alias matlab='LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libstdc++.so.6" matlab'
-	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 1)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
-	export CUDAHOME="/usr/local/cuda"
-	export PYTHON_BIN=/usr/bin/python3
 else
 	echo "SGE specific variables"
 	export PREFIX="/mnt/matylda1/isochor/local"
