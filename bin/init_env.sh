@@ -27,6 +27,13 @@ if [[ "$hostname" == "pcsochor" ]]; then
 	export CUDAHOME=""
 	export PYTHON_BIN=/usr/bin/python3
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
+elif [[ "$hostname" == "pcspanhel-gpu" ]]; then
+	echo "PCspanhel-GPU specific variables"
+	export PREFIX="/home/isochor/local"
+	export MATLABROOT=""
+	export CUDAHOME=""
+	export PYTHON_BIN=/usr/bin/python3
+	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 1)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
 else
 	echo "SGE specific variables"
 	export PREFIX="/mnt/matylda1/isochor/local"
@@ -39,8 +46,8 @@ else
 	#export PATH="$PYTHONHOME/bin:$PATH"
 	#export PYTHON_BIN="$PYTHONHOME/bin/python3"
 	#echo "Enabling python from $PYTHONHOME"
-	alias activate_canopy="source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'"
-	VIRTUAL_ENV_DISABLE_PROMPT=1 source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'
+	#alias activate_canopy="source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'"
+	#VIRTUAL_ENV_DISABLE_PROMPT=1 source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'
 	export CUDAHOME="/usr/local/share/cuda"
 	if [ ! -z "$TERM" ]; then
 		export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 5)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"	
