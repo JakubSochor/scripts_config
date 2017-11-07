@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for var in "$@"
+do
+    echo "$var -> $var.png"
+    convert -density 300 $var $var.png
+done
