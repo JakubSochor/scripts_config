@@ -46,6 +46,8 @@ else
 	alias qlog-res='qlogin -q long.q@@stable -l ram_free=150000M,mem_free=150000M,matylda1=1'
 	alias qlog-gpu='qlogin -q long.q@@gpu -l gpu=1,matylda1=10,mem_free=5G,ram_free=5G'
 	alias matlab='LD_PRELOAD="/usr/lib64/libstdc++.so.6" matlab'
+	alias python=python3.4
+	alias pip=pip3.4
 	#export PYTHONHOME="$PREFIX/anaconda3"
 	#export PATH="$PYTHONHOME/bin:$PATH"
 	#export PYTHON_BIN="$PYTHONHOME/bin/python3"
