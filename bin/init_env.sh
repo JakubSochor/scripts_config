@@ -49,6 +49,7 @@ else
 	alias matlab='LD_PRELOAD="/usr/lib64/libstdc++.so.6" matlab'
 	alias python=python3.4
 	alias pip=pip3.4
+	alias ipython=ipython3
 	#export PYTHONHOME="$PREFIX/anaconda3"
 	#export PATH="$PYTHONHOME/bin:$PATH"
 	#export PYTHON_BIN="$PYTHONHOME/bin/python3"
@@ -58,6 +59,7 @@ else
 	#VIRTUAL_ENV_DISABLE_PROMPT=1 source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'
 	export CUDAHOME="/usr/local/share/cuda-8.0.61"
 	export MATYLDA_ALL_LOCATION="/mnt/matylda1"
+	export PATH="/homes/kazi/isochor/.local/bin:$PATH"
 	if [ ! -z "$TERM" ]; then
 		export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 5)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"	
 	fi
