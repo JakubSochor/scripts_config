@@ -22,6 +22,7 @@ alias ll='ls -lh'
 hostname=`hostname`
 if [[ "$hostname" == "pcsochor" ]]; then
 	echo "PCsochor specific variables"
+	alias spy='spyder3 -p $(pwd -P)'
 	export PREFIX="/home/isochor/local"
 	export MATYLDA_ALL_LOCATION="/mnt/matylda1"
 	export MATLABROOT=""
@@ -55,7 +56,7 @@ else
 	#echo "Enabling python from $PYTHONHOME"
 	#alias activate_canopy="source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'"
 	#VIRTUAL_ENV_DISABLE_PROMPT=1 source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'
-	export CUDAHOME="/usr/local/share/cuda"
+	export CUDAHOME="/usr/local/share/cuda-8.0.61"
 	export MATYLDA_ALL_LOCATION="/mnt/matylda1"
 	if [ ! -z "$TERM" ]; then
 		export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 5)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"	
