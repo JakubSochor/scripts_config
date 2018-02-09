@@ -57,7 +57,7 @@ else
 	#echo "Enabling python from $PYTHONHOME"
 	#alias activate_canopy="source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'"
 	#VIRTUAL_ENV_DISABLE_PROMPT=1 source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'
-	export CUDAHOME="/usr/local/share/cuda-8.0.61"
+	export CUDAHOME="/usr/local/share/cuda" #cuda9
 	export MATYLDA_ALL_LOCATION="/mnt/matylda1"
 	export PATH="/homes/kazi/isochor/.local/bin:$PATH"
 	export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
