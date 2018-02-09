@@ -47,13 +47,10 @@ else
 	alias qlog-res='qlogin -q long.q@@stable -l ram_free=150000M,mem_free=150000M,matylda1=1'
 	alias qlog-gpu='qlogin -q long.q@@gpu -l gpu=1,matylda1=10,mem_free=5G,ram_free=5G'
 	alias matlab='LD_PRELOAD="/usr/lib64/libstdc++.so.6" matlab'
-	alias python=python3.4
-	alias pip=pip3.4
-	alias ipython=ipython3
-	#export PYTHONHOME="$PREFIX/anaconda3"
-	#export PATH="$PYTHONHOME/bin:$PATH"
-	#export PYTHON_BIN="$PYTHONHOME/bin/python3"
-	export PYTHON=/usr/local/bin/python3.4
+	alias python=python3.6
+	alias pip=pip3.6
+	alias ipython="~/.local/bin/ipython3"
+	export PYTHON=/usr/local/bin/python3.6
 	#echo "Enabling python from $PYTHONHOME"
 	#alias activate_canopy="source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'"
 	#VIRTUAL_ENV_DISABLE_PROMPT=1 source '/homes/kazi/isochor/Enthought/Canopy_64bit/User/bin/activate'
