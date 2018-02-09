@@ -60,6 +60,7 @@ else
 	export CUDAHOME="/usr/local/share/cuda-8.0.61"
 	export MATYLDA_ALL_LOCATION="/mnt/matylda1"
 	export PATH="/homes/kazi/isochor/.local/bin:$PATH"
+	export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 	if [ ! -z "$TERM" ]; then
 		export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 5)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"	
 	fi
@@ -85,7 +86,7 @@ if [[ ! -z "$PREFIX" ]]; then
 		export LD_LIBRARY_PATH="$PREFIX/lib64:$LD_LIBRARY_PATH"
 	fi
 	if [[ -d "$PREFIX/lib/pkgconfig" ]]; then
-		export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig"
+		export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH"
 	fi
 fi
 
