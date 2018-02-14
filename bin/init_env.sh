@@ -42,7 +42,10 @@ elif [[ "$hostname" == "pcspanhel-gpu" ]]; then
 	export MATLABROOT=""
 	export CUDAHOME=""
 	export PYTHON_BIN=/usr/bin/python3
-	export PYTHON=python3
+	alias python=python3.6
+	alias pip=pip3.6
+	alias ipython="~/.local/bin/ipython3"
+	export PYTHON=/usr/bin/python3
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 1)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
 else
 	echo "SGE specific variables"
