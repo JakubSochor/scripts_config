@@ -30,6 +30,11 @@ if [[ "$hostname" == "pcsochor" ]]; then
 	export PYTHON_BIN=/usr/bin/python3
 	export PYTHON=python3
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
+	export VIRTUALENVWRAPPER_PYTHON=$PYTHON_BIN
+    export VIRTUALENV_PYTHON=$PYTHON_BIN
+    if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+	    source /usr/local/bin/virtualenvwrapper.sh
+    fi
 elif [[ "$hostname" == "pcspanhel-gpu" ]]; then
 	echo "PCspanhel-GPU specific variables"
 	export MATYLDA_ALL_LOCATION="/home/isochor/matylda_all"
@@ -63,12 +68,6 @@ else
 	fi
 fi
 
-
-export VIRTUALENVWRAPPER_PYTHON=$PYTHON_BIN
-export VIRTUALENV_PYTHON=$PYTHON_BIN
-if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
-	source /usr/local/bin/virtualenvwrapper.sh
-fi
 
 
 if [[ ! -z "$PREFIX" ]]; then
