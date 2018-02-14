@@ -46,6 +46,7 @@ elif [[ "$hostname" == "pcspanhel-gpu" ]]; then
 	alias pip=pip3
 	alias ipython="~/.local/bin/ipython3"
 	export PYTHON=/usr/bin/python3
+	export PATH="/home/isochor/.local/bin:$PATH"
 	export PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 3)\]\t \\[$(tput setaf 2)\]\u\[$(tput setaf 1)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 4)\]\w\[$(tput setaf 7)\]]\[$(tput setaf 4)\] \[$(tput sgr0)\]\n\[$(tput bold)\]\[$(tput setaf 4)\]$ \[$(tput sgr0)\]"
 else
 	echo "SGE specific variables"
